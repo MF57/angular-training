@@ -12,6 +12,7 @@ var app = angular.module('app', []);
 // Run blocks typically contain code which is hard to unit-test, and for this reason should be declared
 // in isolated modules, so that they can be ignored in the unit-tests.
 app.run(function ($rootScope) {
+    //It's not a good code practice to extend $rootScope of many objects
    $rootScope.dateOriginal = new Date(); 
 });
 

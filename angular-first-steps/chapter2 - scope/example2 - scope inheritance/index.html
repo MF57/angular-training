@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html ng-app="app">
+    <head>
+        <title>Controllers - inheritance</title>
+    </head>
+    <body>
+        <div ng-controller="ParentCtrl">
+            <div ng-controller="InheritanceCtrl">
+                <!--Inner Controller's scope has access to the parent controller's scope-->
+                <input type="text" ng-model="student.name" placeholder="Student's name">
+                <button ng-click="checkTest()">Check Test</button>
+            </div>
+            <div>
+                <!--But not the other way around-->
+                <button ng-click="checkTest()">Check Test (won't work)</button>
+            </div>
+            {{student}}
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+        <script src="controllers.js"></script>
+    </body>
+</html>
