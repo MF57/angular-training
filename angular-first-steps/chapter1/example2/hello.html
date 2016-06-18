@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html ng-app="app">
+    <body>
+        <div ng-controller="FirstCtrl">
+            <label>
+                <input type="text" ng-model="message.sentence">
+            </label>
+            <p>Hello {{message.sentence}}!</p>
+            <p>{{people}}</p>
+            <p>{{32 + 25}}</p>
+            <p>{{"2 + 2 = 4"}}</p>
+            <p>{{testFunction("Interpolation is cool")}}</p>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+        <script src="controller.js"></script>
+    </body>
+</html>
