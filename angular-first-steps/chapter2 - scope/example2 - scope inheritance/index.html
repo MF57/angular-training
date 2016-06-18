@@ -15,6 +15,12 @@
                 <button ng-click="checkTest()">Check Test (won't work)</button>
             </div>
             {{student}}
+            <ul>
+                <!--ng-repeats creates separate scope object for each element of the collection (prevents name collisions)-->
+                <li ng-repeat="grade in grades">
+                    <p>Subject: {{grade.subject}}, grade: {{grade.mark}}</p>
+                </li>
+            </ul>
         </div>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
         <script src="controllers.js"></script>
