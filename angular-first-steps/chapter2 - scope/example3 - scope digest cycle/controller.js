@@ -41,15 +41,18 @@ app.controller('DefaultCtrl', function ($scope) {
             console.log('Adding with delay');
             //manually triggering digest cycle
             //NEVER call $digest, but apply
-            $scope.$apply();
+
         }, 2000)
     };
 
     $scope.subtractWithDelay = function () {
         setTimeout(function() {
-            $scope.number--;
+            //it is better to wrap code which modifies scope objects outside of angular in $scope.$apply
+            //instead of just $scope.$scope.apply() because then this code is wrapped with exception handling
+            $scope.$apply(function() {
+                $scope.number--;
+            });
             console.log('Subtracting with delay');
-            $scope.$apply();
         }, 2000)
     };
 });
