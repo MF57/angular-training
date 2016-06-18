@@ -19,14 +19,24 @@ app.controller('ParentCtrl', function ($scope, $rootScope) {
 
     //Angular inheritance example
     var rootObject = $rootScope;
+
+    //new scope from inherited from $rootScope
     var inheritedObject = rootObject.$new();
+
+    //new isolated scope from $rootScope (it is a scope, but it isn't inheriting from parents)
+    //Isolated scope is being used in directives which we want to reuse more than one time
+    var isolatedObject = rootObject.$new(true);
+
     rootObject.teacherName = 'Ian';
     inheritedObject.teacherSurname = 'McCooper';
+    isolatedObject.teacherSurname = 'McCooper';
 
-    //will print Ian undefined
-    console.log(inheritedObject.teacherName + ' ' + inheritedObject.teacherSurname);
     //will print Ian McCooper
+    console.log(inheritedObject.teacherName + ' ' + inheritedObject.teacherSurname);
+    //will print Ian undefined
     console.log(rootObject.teacherName + ' ' + rootObject.teacherSurname);
+    //will print undefined McCooper
+    console.log(isolatedObject.teacherName + ' ' + isolatedObject.teacherSurname);
 });
 
 app.controller('InheritanceCtrl', function ($scope) {
