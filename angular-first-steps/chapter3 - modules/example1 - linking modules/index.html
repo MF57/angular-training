@@ -1,11 +1,15 @@
 <!DOCTYPE html>
-<html ng-app="app">
+<html ng-app="myApp">
     <head>
-        <title></title>
+        <title>Linking modules</title>
     </head>
     <body>
         <div ng-controller="DefaultCtrl">
-
+            {{message}}
+        </div>
+        <!--We can use OtherCtrl from myApp2 module because it is injected into myApp module-->
+        <div ng-controller="OtherCtrl">
+            {{otherMessage}}
         </div>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
         <script src="controller.js"></script>
