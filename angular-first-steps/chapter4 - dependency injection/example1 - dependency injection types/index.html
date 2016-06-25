@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html ng-app="app">
+    <head>
+        <title>Dependency Injection Types</title>
+    </head>
+    <body>
+        <div ng-controller="DangerousCtrl">
+            {{message}} <br>
+            Root scope counter: {{counter}}
+        </div>
+        <div ng-controller="SafeCtrl">
+            {{message}} <br>
+            Root scope counter: {{counter}}
+        </div>
+        <div ng-controller="FancyCtrl">
+            {{message}} <br>
+            Root scope counter: {{counter}}
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+        <script src="controller.js"></script>
+    </body>
+</html>
