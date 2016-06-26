@@ -1,5 +1,10 @@
 var app = angular.module('app', []);
 
+// There are two phases of the compilation: pre-link and post-link
+// In pre-link directive with highest priority will be executed first
+// In post-link directive with lowest priority will be executed first
+// Default compilation phase is post-link
+// Terminal flag set to true means that directives with lower/higher (depends on compilation phase) priority wont be executed
 app.directive('myDirective1', function() {
     return {
         priority: 1,
