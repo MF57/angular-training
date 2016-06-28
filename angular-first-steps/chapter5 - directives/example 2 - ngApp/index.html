@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ngApp</title>
+    </head>
+    <body>
+        <div id="firstApp" ng-app="firstApp">
+            <div ng-controller="FirstCtrl">
+                {{message}}
+            </div>
+        </div>
+
+        <div id="secondApp" ng-app="secondApp">
+            <div ng-controller="SecondCtrl">
+                {{message}}
+            </div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+        <script src="app.js"></script>
+    </body>
+</html>
